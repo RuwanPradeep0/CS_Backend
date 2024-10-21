@@ -3,8 +3,10 @@ package CS.Backend.cs.backend.service;
 import CS.Backend.cs.backend.RequestResponse.PostRequest;
 import CS.Backend.cs.backend.RequestResponse.PostResponse;
 import CS.Backend.cs.backend.entity.Post;
+import org.springframework.stereotype.Component;
 
-public class PostMapper {
+@Component
+public class PostsMapper {
 
     public Post toPost(PostRequest postRequest) {
         return Post.builder()

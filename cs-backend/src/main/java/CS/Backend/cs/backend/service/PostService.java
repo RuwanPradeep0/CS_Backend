@@ -15,12 +15,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PostService {
 
-    private final PostMapper postMapper;
+    private final PostsMapper postMapper;
     public final PostRepository postRepository;
 
 
-    public PostResponse createPost(PostRequest postRequest, Authentication connectedAdmin) {
-        User user = ((User) connectedAdmin.getPrincipal());
+    public PostResponse createPost(PostRequest postRequest) {
+
         Post post = postMapper.toPost(postRequest);
         Post savedPost =  postRepository.save(post);
         return postMapper.toPostResponse(savedPost);
@@ -30,5 +30,8 @@ public class PostService {
         return null;
     }
 
-    public PostResponse updatePost(PostRequest postRequest , Authentication connectedAdmin)
+    public PostResponse updatePost(PostRequest postRequest , Authentication connectedAdmin){
+
+        return null;
+    };
 }
